@@ -1,0 +1,548 @@
+<html>
+<head>
+<title>ChatGPT-EDSS: Empathetic Dialogue Speech Synthesis Trained from ChatGPT-derived Context Word Embeddings</title>
+<style type="text/css">
+
+  ul.sample li {
+  margin-bottom: 10px;
+  }
+    audio {
+      width: 150px;
+    }
+    div {
+      margin-bottom: 64px;
+    }
+    .first-col {
+      padding-right: 30px;
+      white-space: nowrap;
+    }
+    .text {
+      font-style: italic;
+      color: #666666;
+    }
+    .text_gst {
+      font-style: italic;
+      color: #666666;
+      font-size: 11pt;
+      padding-bottom: 2px;
+      padding-top: 2px;
+      width: 350px;
+    }
+    p.box {
+       border-bottom: 1px dashed black;
+    }
+  </style>
+
+</head>
+
+<body>
+  <br>
+  <h2>ChatGPT-EDSS: Empathetic Dialogue Speech Synthesis Trained from ChatGPT-derived Context Word Embeddings</h2>
+  <br>
+  <p><b>Paper</b><br>[TBA]</p>
+  <p>
+    <b>Anonymous Authors</b>
+    <ul class="sample">
+    <li>The URL to our project page will be published after the end of blind-review period.</li>
+    </ul>
+  </p>
+  <hr>
+
+  <b>Annotation examples</b>
+  <ul class="sample">
+  <li>Only "GT emotion" was annotated by the corpus developers.</li>
+  </ul>
+  <p class="box">Sample 1</p>
+  <table>
+    <tbody>
+    <tr>
+      <td class="first-col">Speaker</td>
+      <td class="first-col">Text (jp)</td>
+      <td class="first-col">Text (en)</td>
+      <td class="first-col">Intention</td>
+      <td class="first-col">Emotion</td>
+      <td class="first-col">Speaking style</td>
+      <td class="first-col">Reliability score</td>
+      <td class="first-col">GT Emotion</td>
+    </tr>
+    <tr>
+      <td class="first-col">MStudent</td>
+      <td class="text_gst">先生、今回のテストの点数すごくよかったよ！</td>
+      <td class="text_gst">Hi, teacher. I got really good scores on this test!</td>
+      <td class="text_gst">報告 (report)</td>
+      <td class="text_gst">喜び (joy)</td>
+      <td class="text_gst">爽やか (clear)</td>
+      <td class="text">5</td>
+      <td class="text_gst">Happy</td>
+    </tr>
+    <tr>
+      <td class="first-col">Teacher</td>
+      <td class="text_gst">おめでとう、頑張ったね！</td>
+      <td class="text_gst">Congrats, you did great!</td>
+      <td class="text_gst">祝福 (blessing)</td>
+      <td class="text_gst">喜び (joy)</td>
+      <td class="text_gst">落ち着いた (quiet)</td>
+      <td class="text">3</td>
+      <td class="text_gst">Happy</td>
+    </tr>
+    <tr>
+      <td class="first-col">MStudent</td>
+      <td class="text_gst">先生のおかげだよ！</td>
+      <td class="text_gst">Thank you for your help!</td>
+      <td class="text_gst">報告 (report)</td>
+      <td class="text_gst">信頼 (trust)</td>
+      <td class="text_gst">穏やか (gentle)</td>
+      <td class="text">4</td>
+      <td class="text_gst">Happy</td>
+    </tr>
+    <tr>
+      <td class="first-col">Teacher</td>
+      <td class="text_gst">いやいや、あなたがすごく頑張ったからだよ。</td>
+      <td class="text_gst">No, no. It's because you worked so hard.</td>
+      <td class="text_gst">否定 (negation)</td>
+      <td class="text_gst">期待 (anticipation)</td>
+      <td class="text_gst">落ち着いた (quiet)</td>
+      <td class="text">5</td>
+      <td class="text_gst">Happy</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p class="box">Sample 2</p>
+  <table>
+    <tbody>
+    <tr>
+      <td class="first-col">Speaker</td>
+      <td class="first-col">Text (jp)</td>
+      <td class="first-col">Text (en)</td>
+      <td class="first-col">Intention</td>
+      <td class="first-col">Emotion</td>
+      <td class="first-col">Speaking style</td>
+      <td class="first-col">Reliability score</td>
+      <td class="first-col">GT Emotion</td>
+    </tr>
+    <tr>
+      <td class="first-col">FStudent</td>
+      <td class="text_gst">先週の地方大会で、すごくいい成績が残せたんです。</td>
+      <td class="text_gst">I did really well at a regional tournament for my club last week.</td>
+      <td class="text_gst">報告 (report)</td>
+      <td class="text_gst">喜び (joy)</td>
+      <td class="text_gst">生き生きした (vibrant)</td>
+      <td class="text">5</td>
+      <td class="text_gst">Happy</td>
+    </tr>
+    <tr>
+      <td class="first-col">Teacher</td>
+      <td class="text_gst">聞いたよ、快挙だね！一生懸命練習した甲斐があったね！</td>
+      <td class="text_gst">I hear you, that's an accomplishment! All that hard practice was worth it!</td>
+      <td class="text_gst">祝福 (blessing)</td>
+      <td class="text_gst">喜び (joy)</td>
+      <td class="text_gst">爽やか (clear)</td>
+      <td class="text">5</td>
+      <td class="text_gst">Happy</td>
+    </tr>
+    <tr>
+      <td class="first-col">FStudent</td>
+      <td class="text_gst">ありがとうございます！努力が実を結ぶって、こんな感じなんだな、って思いました。</td>
+      <td class="text_gst">Thank you! I think this is what it feels like when hard work pays off.</td>
+      <td class="text_gst">感謝 (gratitude)</td>
+      <td class="text_gst">喜び (joy)</td>
+      <td class="text_gst">穏やか (gentle)</td>
+      <td class="text">5</td>
+      <td class="text_gst">Happy</td>
+    </tr>
+    <tr>
+      <td class="first-col">Teacher</td>
+      <td class="text_gst">真面目にやってた人には、必ずいいことが起こるんだって。</td>
+      <td class="text_gst">Good things always happen to people who were serious.</td>
+      <td class="text_gst">賛辞 (praise)</td>
+      <td class="text_gst">期待 (anticipation)</td>
+      <td class="text_gst">知的 (intellectual)</td>
+      <td class="text">5</td>
+      <td class="text_gst">Happy</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<p class="box">Sample 3</p>
+<table>
+  <tbody>
+  <tr>
+    <td class="first-col">Speaker</td>
+    <td class="first-col">Text (jp)</td>
+    <td class="first-col">Text (en)</td>
+    <td class="first-col">Intention</td>
+    <td class="first-col">Emotion</td>
+    <td class="first-col">Speaking style</td>
+    <td class="first-col">Reliability score</td>
+    <td class="first-col">GT Emotion</td>
+  </tr>
+  <tr>
+    <td class="first-col">MStudent</td>
+    <td class="text_gst">今日学校で、些細なことで先生に注意されて、むかついたわ。</td>
+    <td class="text_gst">I was so disgusted when a male teacher warned me about something so trivial at school today.</td>
+    <td class="text_gst">注意されている (warned)</td>
+    <td class="text_gst">怒り (anger)</td>
+    <td class="text_gst">生き生きした (vibrant)</td>
+    <td class="text">3</td>
+    <td class="text_gst">Angry</td>
+  </tr>
+  <tr>
+    <td class="first-col">Teacher</td>
+    <td class="text_gst">なんで注意されちゃったの？</td>
+    <td class="text_gst">Why did you get warned?</td>
+    <td class="text_gst">問いかけ (question)</td>
+    <td class="text_gst">信頼 (trust)</td>
+    <td class="text_gst">落ち着いた (quiet)</td>
+    <td class="text">5</td>
+    <td class="text_gst">Neutral</td>
+  </tr>
+  <tr>
+    <td class="first-col">MStudent</td>
+    <td class="text_gst">授業中にYouTubeみてたら、急にどなられたわ。</td>
+    <td class="text_gst">I was watching YouTube in class and he suddenly yelled at me.</td>
+    <td class="text_gst">報告 (report)</td>
+    <td class="text_gst">怒り (anger)</td>
+    <td class="text_gst">生き生きした (vibrant)</td>
+    <td class="text">3</td>
+    <td class="text_gst">Angry</td>
+  </tr>
+  <tr>
+    <td class="first-col">Teacher</td>
+    <td class="text_gst">授業中にみてたら怒られるわよ。せめて休み時間にしたらいいのに。</td>
+    <td class="text_gst">That's right. Why not at least do it during recess?</td>
+    <td class="text_gst">疑念 (suspicion)</td>
+    <td class="text_gst">期待 (anticipation)</td>
+    <td class="text_gst">クール (cool)</td>
+    <td class="text">4</td>
+    <td class="text_gst">Neutral</td>
+  </tr>
+  </tbody>
+</table>
+
+<p class="box">Sample 4</p>
+<table>
+  <tbody>
+  <tr>
+    <td class="first-col">Speaker</td>
+    <td class="first-col">Text (jp)</td>
+    <td class="first-col">Text (en)</td>
+    <td class="first-col">Intention</td>
+    <td class="first-col">Emotion</td>
+    <td class="first-col">Speaking style</td>
+    <td class="first-col">Reliability score</td>
+    <td class="first-col">GT Emotion</td>
+  </tr>
+  <tr>
+    <td class="first-col">FStudent</td>
+    <td class="text_gst">今日は部活で「連帯責任」って言って全員お説教されちゃったよ。</td>
+    <td class="text_gst">Today, everyone in the club got a sermon saying that "We are co-responsible for each other's performance."</td>
+    <td class="text_gst">報告 (report)</td>
+    <td class="text_gst">怒り (anger)</td>
+    <td class="text_gst">生き生きした (vibrant)</td>
+    <td class="text">5</td>
+    <td class="text_gst">Angry</td>
+  </tr>
+  <tr>
+    <td class="first-col">Teacher</td>
+    <td class="text_gst">連帯責任、いかにも学校らしいなぁ。</td>
+    <td class="text_gst">"Co-responsible" sounds like how very school-like.</td>
+    <td class="text_gst">疑念 (suspicion)</td>
+    <td class="text_gst">落ち着いた (quiet)</td>
+    <td class="text_gst">知的 (intellectual)</td>
+    <td class="text">2</td>
+    <td class="text_gst">Neutral</td>
+  </tr>
+  <tr>
+    <td class="first-col">FStudent</td>
+    <td class="text_gst">先生が高校生のころもあった？</td>
+    <td class="text_gst">Did you have the same experience when you were in high school?</td>
+    <td class="text_gst">問いかけ (question)</td>
+    <td class="text_gst">信頼 (trust)</td>
+    <td class="text_gst">可愛い (cute)</td>
+    <td class="text">5</td>
+    <td class="text_gst">Neutral</td>
+  </tr>
+  <tr>
+    <td class="first-col">Teacher</td>
+    <td class="text_gst">あったあった。そのへんは今も昔も同じだから、怒る気持ちも分かるよ。</td>
+    <td class="text_gst">Yes, yes. That part is the same now as it was then, so I can understand why you are angry.</td>
+    <td class="text_gst">共感 (empathy)</td>
+    <td class="text_gst">穏やか (gentle)</td>
+    <td class="text_gst">誠実 (honest)</td>
+    <td class="text">5</td>
+    <td class="text_gst">Neutral</td>
+  </tr>
+</tbody>
+</table>
+
+<p class="box">Sample 5</p>
+<table>
+  <tbody>
+  <tr>
+    <td class="first-col">Speaker</td>
+    <td class="first-col">Text (jp)</td>
+    <td class="first-col">Text (en)</td>
+    <td class="first-col">Intention</td>
+    <td class="first-col">Emotion</td>
+    <td class="first-col">Speaking style</td>
+    <td class="first-col">Reliability score</td>
+    <td class="first-col">GT Emotion</td>
+  </tr>
+  <tr>
+    <td class="first-col">MStudent</td>
+    <td class="text_gst">あそこまで行ったのに悔しい…。</td>
+    <td class="text_gst">It's frustrating because we were so close to winning...</td>
+    <td class="text_gst">悔しさ (regret)</td>
+    <td class="text_gst">悲しみ (sadness)</td>
+    <td class="text_gst">渋い (gravelly)</td>
+    <td class="text">4</td>
+    <td class="text_gst">Sad</td>
+  </tr>
+  <tr>
+    <td class="first-col">Teacher</td>
+    <td class="text_gst">じゅうぶん頑張ったじゃん。</td>
+    <td class="text_gst">You've worked hard enough.</td>
+    <td class="text_gst">鼓舞 (inspiration)</td>
+    <td class="text_gst">喜び (joy)</td>
+    <td class="text_gst">穏やか (gentle)</td>
+    <td class="text">3</td>
+    <td class="text_gst">Neutral</td>
+  </tr>
+  <tr>
+    <td class="first-col">MStudent</td>
+    <td class="text_gst">自信持っていいのかな？</td>
+    <td class="text_gst">Can I be confident?</td>
+    <td class="text_gst">自信不足 (unconfident)</td>
+    <td class="text_gst">悲しみ (sadness)</td>
+    <td class="text_gst">落ち着いた (quiet)</td>
+    <td class="text">4</td>
+    <td class="text_gst">Neutral</td>
+  </tr>
+  <tr>
+    <td class="first-col">Teacher</td>
+    <td class="text_gst">あったり前じゃん！凄いことだよ！</td>
+    <td class="text_gst">That's a thing! That's great!</td>
+    <td class="text_gst">肯定 (affirmation)</td>
+    <td class="text_gst">喜び (joy)</td>
+    <td class="text_gst">生き生きした (vibrant)</td>
+    <td class="text">5</td>
+    <td class="text_gst">Neutral</td>
+  </tr>
+  </tbody>
+</table>
+
+<p class="box">Sample 6</p>
+<table>
+  <tbody>
+  <tr>
+    <td class="first-col">Speaker</td>
+    <td class="first-col">Text (jp)</td>
+    <td class="first-col">Text (en)</td>
+    <td class="first-col">Intention</td>
+    <td class="first-col">Emotion</td>
+    <td class="first-col">Speaking style</td>
+    <td class="first-col">Reliability score</td>
+    <td class="first-col">GT Emotion</td>
+  </tr>
+  <tr>
+    <td class="first-col">FStudent</td>
+    <td class="text_gst">こんなに点数が悪かったのははじめてで、すごくショックです。何が悪かったんでしょうか。</td>
+    <td class="text_gst">This is the first time I have had such a bad score and I am very shocked. What did I do wrong?</td>
+    <td class="text_gst">悲しみ (sadness)</td>
+    <td class="text_gst">ショック (shocked)</td>
+    <td class="text_gst">落ち着いた (quiet)</td>
+    <td class="text">4</td>
+    <td class="text_gst">Sad</td>
+  </tr>
+  <tr>
+    <td class="first-col">Teacher</td>
+    <td class="text_gst">そういうこともあるよ。苦手なところからたくさん出題されたのかな。</td>
+    <td class="text_gst">That's one of those things. I guess you got a lot of questions from areas you were not good at.</td>
+    <td class="text_gst">同情 (sympathy)</td>
+    <td class="text_gst">平静 (neutral)</td>
+    <td class="text_gst">落ち着いた (quiet)</td>
+    <td class="text">4</td>
+    <td class="text_gst">Neutral</td>
+  </tr>
+  <tr>
+    <td class="first-col">FStudent</td>
+    <td class="text_gst">単純ミスが多くて、自分でも、どうして間違ったのか分からないのばかりです。</td>
+    <td class="text_gst">There are so many simple mistakes, and even I don't know how I got them wrong.</td>
+    <td class="text_gst">悲しみ (sadness)</td>
+    <td class="text_gst">悩み (worry)</td>
+    <td class="text_gst">落ち着いた (quiet)</td>
+    <td class="text">5</td>
+    <td class="text_gst">Sad</td>
+  </tr>
+  <tr>
+    <td class="first-col">Teacher</td>
+    <td class="text_gst">普段だったらできる問題ならだいじょうぶだよ。これを教訓にして、次回からは確実に点数を取っていくように頑張ろうね！</td>
+    <td class="text_gst">If it's a problem you can normally do, you'll be fine. Let this be a lesson to you, so that next time you can get a good score for sure!</td>
+    <td class="text_gst">励まし (encouragement)</td>
+    <td class="text_gst">期待 (anticipation)</td>
+    <td class="text_gst">穏やか (gentle)</td>
+    <td class="text">4</td>
+    <td class="text_gst">Neutral</td>
+  </tr>
+</tbody>
+</table>
+
+  <hr>
+  <p>
+  <b>Synthetic speech samples</b>
+  </p>
+  <ul class="sample">
+  <li>Empathetic dialogue speech synthesis using FastSpeech 2 (FS2) conditioned on</li>
+    <ul class="sample">
+      <li>Emo: GT emotion label of the dialogue agent</li>
+      <li>CCE: Context embedding extracted from conversational context encoder [Guo+21]</li>
+      <li>IES (<b>ours</b>): BERT embeddings of ChatGPT-derived intention, emotion, and speaking-style words</li>
+    </ul>
+  </ul>
+  <table>
+    <tbody>
+    <tr>
+      <td class="first-col">Method</td>
+      <td class="first-col">Sample 1</td>
+      <td class="first-col">Sample 2</td>
+      <td class="first-col">Sample 3</td>
+      <td class="first-col">Sample 4</td>
+    </tr>
+    <tr>
+      <td class="first-col">Natural</td>
+      <td><audio controls="" preload="none"><source src="wav/syn/N-GT.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/H-GT.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/S-GT.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/A-GT.wav"></audio></td>
+    </tr>
+    <tr>
+      <td class="first-col">FS2+Emo</td>
+      <td><audio controls="" preload="none"><source src="wav/syn/N-1000.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/H-1000.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/S-1000.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/A-1000.wav"></audio></td>
+    </tr>
+    <tr>
+      <td class="first-col">FS2&CCE</td>
+      <td><audio controls="" preload="none"><source src="wav/syn/N-0000_cce.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/H-0000_cce.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/S-0000_cce.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/A-0000_cce.wav"></audio></td>
+    </tr>
+    <tr>
+      <td class="first-col">FS2&IES</td>
+      <td><audio controls="" preload="none"><source src="wav/syn/N-0111.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/H-0111.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/S-0111.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/A-0111.wav"></audio></td>
+    </tr>
+    <tr>
+      <td class="first-col">FS2&Emo&IES</td>
+      <td><audio controls="" preload="none"><source src="wav/syn/N-1111.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/H-1111.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/S-1111.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/A-1111.wav"></audio></td>
+    </tr>
+    <tr>
+      <td class="first-col">FS2&Emo&CCE</td>
+      <td><audio controls="" preload="none"><source src="wav/syn/N-1000_cce.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/H-1000_cce.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/S-1000_cce.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/A-1000_cce.wav"></audio></td>
+    </tr>
+    <tr>
+      <td class="first-col">FS2&CCE&IES</td>
+      <td><audio controls="" preload="none"><source src="wav/syn/N-0111_cce.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/H-0111_cce.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/S-0111_cce.wav"></audio></td>
+      <td><audio controls="" preload="none"><source src="wav/syn/A-0111_cce.wav"></audio></td>
+    </tr>
+    </tbody>
+  </table>
+
+<hr>
+<p>
+<b>(Bonus) Control of synthetic speech by changing IES words</b>
+</p>
+  Sample 1: text = "そうなんだね。" (en: I see.)
+  <table>
+    <tbody>
+    <tr>
+      <td class="first-col">Speech</td>
+      <td class="first-col">Intention</td>
+      <td class="first-col">Emotion</td>
+      <td class="first-col">Speaking style</td>
+    </tr>
+    <tr>
+      <td><audio controls="" preload="none"><source src="wav/ctrl/sample1-1.wav"></audio></td>
+      <td class="text">問いかけ (question)</td>
+      <td class="text">悲しみ (sadness)</td>
+      <td class="text">落ち着いた (quiet)</td>
+    </tr>
+    <tr>
+      <td><audio controls="" preload="none"><source src="wav/ctrl/sample1-2.wav"></audio></td>
+      <td class="text_gst">賛辞 (praise)</td>
+      <td class="text_gst">喜び (joy)</td>
+      <td class="text_gst">生き生きとした (vibrant)</td>
+    </tr>
+    <tr>
+      <td><audio controls="" preload="none"><source src="wav/ctrl/sample1-3.wav"></audio></td>
+      <td class="text_gst">共感 (empathy)</td>
+      <td class="text_gst">怒り (anger)</td>
+      <td class="text_gst">生き生きとした (vibrant)</td>
+    </tr>
+    </tbody>
+  </table>
+<p class="box"></p>
+Sample 2: text = "えっ？何があったの？" (en: Oh, what happened to you?)
+<table>
+  <tbody>
+    <tr>
+      <td><audio controls="" preload="none"><source src="wav/ctrl/sample2-1.wav"></audio></td>
+      <td class="text">疑念 (suspicion)</td>
+      <td class="text">悲しみ (sadness)</td>
+      <td class="text">クール (cool)</td>
+    </tr>
+    <tr>
+      <td><audio controls="" preload="none"><source src="wav/ctrl/sample2-2.wav"></audio></td>
+      <td class="text_gst">期待 (anticipation)</td>
+      <td class="text_gst">喜び (joy)</td>
+      <td class="text_gst">生き生きとした (vibrant)</td>
+    </tr>
+    <tr>
+      <td><audio controls="" preload="none"><source src="wav/ctrl/sample2-3.wav"></audio></td>
+      <td class="text_gst">問いかけ (question)</td>
+      <td class="text_gst">平静 (neutral)</td>
+      <td class="text_gst">丁寧 (polite)</td>
+    </tr>
+  </tbody>
+</table>
+<p class="box"></p>
+Sample 3: text = "残念だったね。でも、つぎはきっといい結果がでると思うよ。" (en: I'm sorry to hear that. But I am sure you will have a better result next time.)
+<table>
+  <tbody>
+    <tr>
+      <td><audio controls="" preload="none"><source src="wav/ctrl/sample3-1.wav"></audio></td>
+      <td class="text">励まし (encouragement)</td>
+      <td class="text">喜び (joy)</td>
+      <td class="text">生き生きとした (vibrant)</td>
+    </tr>
+    <tr>
+      <td><audio controls="" preload="none"><source src="wav/ctrl/sample3-2.wav"></audio></td>
+      <td class="text_gst">共感 (empathy)</td>
+      <td class="text_gst">悲しみ (sadness)</td>
+      <td class="text_gst">落ち着いた (quiet)</td>
+    </tr>
+    <tr>
+      <td><audio controls="" preload="none"><source src="wav/ctrl/sample3-3.wav"></audio></td>
+      <td class="text_gst">助言 (advice)</td>
+      <td class="text_gst">平静 (neutral)</td>
+      <td class="text_gst">知的 (intellectual)</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
